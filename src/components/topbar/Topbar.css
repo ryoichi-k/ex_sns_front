@@ -13,11 +13,12 @@
 }
 
 .topbarLeft {
+    /* 3/12の幅 */
     flex: 3;
 }
 
 .logo {
-    font-style: 24px;
+    font-size: 24px;
     color: white;
     font-weight: bold;
     margin-left: 20px;
@@ -35,7 +36,7 @@
 
 .searchIcon {
     /* !importantをつけると優先される */
-    font-style: 20px !important;
+    font-size: 20px !important;
     margin-left: 10px;
     margin-right: 5px;
 }
