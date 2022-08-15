@@ -28,7 +28,7 @@
     height: 30px;
     background-color: white;
     border-radius: 25px;
-    /* searchbarのdivタグないが全て横並びになる */
+    /* searchbarのdivタグ内が全て横並びになる */
     display: flex;
     align-items: center;
 }
