@@ -60,3 +60,15 @@
 .rightbarUsername {
     font-weight: 550;
 }
+
+.rightbarOnline {
+    background-color: purple;
+    /* relativeを親にして絶対値で位置を指定 */
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: -2px;
+    left: 0;
+    border: 2px solid white;
+}
