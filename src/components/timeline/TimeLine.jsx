@@ -5,6 +5,7 @@ import "./TimeLine.css"
 import { Posts } from "../../dummyData.js"
 
 
+
 export default function TimeLine() {
   return (
       <div className="timeline">
