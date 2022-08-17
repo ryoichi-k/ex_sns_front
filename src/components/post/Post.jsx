@@ -10,7 +10,7 @@ export default function Post({ post }) {
     //画像パス
     const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
 
-    //いいね
+    //いいねの状態管理
     const [like, setLike] = useState(post.likes.length)
     const [isLiked, setIsLiked] = useState(false)
 

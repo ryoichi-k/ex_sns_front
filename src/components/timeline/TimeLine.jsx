@@ -8,14 +8,16 @@ import axios from "axios"
 
 
 
-export default function TimeLine() {
+export default function TimeLine({ username }) {
     const [posts, setPosts] = useState([]);
 
 
-    //useEffect第２引数を空にすることでマウント時に１回だけ呼ばれるようになる
+    //propsで渡されたusernameがあれば自身の投稿のみを表示、なければ全てを表示
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await axios.get("/posts/timeline/62f98fb2bf45a1203e8d3be6");
+            const response = username
+            ? await axios.get(`/posts/profile/${username}`)
+            : await axios.get("/posts/timeline/62f98fb2bf45a1203e8d3be6");
             // postsにmongodbの投稿内容が格納
             setPosts(response.data);
         };

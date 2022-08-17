@@ -19,12 +19,12 @@ export default function Profile() {
                           <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className="profileUserImg" />
                       </div>
                       <div className="profileInfo">
-                      <h4 className="profileInfoName">kano</h4>
+                      <h4 className="profileInfoName">tanaka</h4>
                       <span className="profileInfoDesc">よろしくです</span>
                       </div>
                   </div>
                   <div className="profileRightBottom">
-                    <TimeLine />
+                    <TimeLine username="tanaka" />
                     <Rightbar profile />
                   </div>
               </div>
