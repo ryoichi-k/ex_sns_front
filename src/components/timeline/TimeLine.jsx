@@ -11,11 +11,11 @@ export default function TimeLine() {
     const [posts, setPosts] = useState([]);
 
 
-    //第２引数を空にすることでマウント時に１回だけ呼ばれるようになる
+    //useEffect第２引数を空にすることでマウント時に１回だけ呼ばれるようになる
     useEffect(() => {
         const fetchPosts = async () => {
             const response = await axios.get("/posts/timeline/62f98fb2bf45a1203e8d3be6");
-            // console.log(response);
+            // postsにmongodbの投稿内容が格納
             setPosts(response.data);
         };
         fetchPosts();
