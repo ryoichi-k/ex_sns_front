@@ -16,7 +16,7 @@ export default function Profile() {
                   <div className="profileRightTop">
                       <div className="profileCover">
                           <img src={PUBLIC_FOLDER + "/post/3.jpeg"} alt="" className="profileCoverImg" />
-                          <img src="./assets/person/1.jpeg" alt="" className="profileUserImg" />
+                          <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className="profileUserImg" />
                       </div>
                       <div className="profileInfo">
                       <h4 className="profileInfoName">kano</h4>
