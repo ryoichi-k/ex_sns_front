@@ -3,6 +3,7 @@ import Share from "../share/Share"
 import Post from "../post/Post"
 import "./TimeLine.css"
 import axios from "axios"
+
 // import { Posts } from "../../dummyData.js"
 
 
@@ -26,7 +27,7 @@ export default function TimeLine() {
           <div className="timelineWrapper">
               <Share />
               { posts.map((post) => (
-                  <Post post={post} key={ post.id } />
+                  <Post post={post} key={ post._id } />
               ))}
           </div>
     </div>
