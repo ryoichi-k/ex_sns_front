@@ -16,7 +16,18 @@ const initialState = {
 export const AuthContext = createContext(initialState);
 
 //認証状態
-export const AuthContextProvider = () => {
-    //useReducerは第１引数にreducer、第二引数に初期値をとる。dispatchはアクションの通知部分
+export const AuthContextProvider = ({ children }) => {
+    //useReducerは第１引数にreducer、第二引数に初期値をとる。dispatchはアクションの通知部分。
+    //stateにはユーザーが今ログインしているかどうかの状態が格納されている。
     const [state, dispatch] = useReducer(AuthReducer, initialState);
-}
+    //この中身をみんなで共有したい。componentsに渡したい。
+    return <AuthContextProvider
+      value={{
+        user: state.user,
+        isFetching: state.isFetching,
+        error: state.error,
+        dispatch,
+    }}>
+        {children}
+    </AuthContextProvider>;
+};
