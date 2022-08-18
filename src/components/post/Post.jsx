@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import "./Post.css"
 import axios from "axios"
 import {format} from "timeago.js"
+// import { Link } from '@mui/material'
+import { Link } from "react-router-dom";
 
 // import { Users } from "../../dummyData.js"
 
@@ -20,12 +22,12 @@ export default function Post({ post }) {
     //ユーザー情報取得のAPIを叩く
     useEffect(() => {
         const fetchUser = async () => {
-            const response = await axios.get(`/users/${post.userId}`);
+            const response = await axios.get(`/users?userId=${post.userId}`);
             setUser(response.data);
         };
         console.log(user);
         fetchUser();
-    }, []);
+    }, [post.userId]);
 
     //いいね数の増減
     const handleLike = () => {
@@ -37,10 +39,12 @@ export default function Post({ post }) {
       <div className="post">
         <div className="postWrapper">
             <div className="postTop">
-                <div className="postTopLeft">
-                    <img src={user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"} alt="" className="postProfileImg" />
-                        <span className="postUserName">{ user.username }</span>
-                        <span className="postDate">{format(post.createdAt)}</span>
+                    <div className="postTopLeft">
+                    <Link to={`profile/${user.username}`}>
+                        <img src={user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"} alt="" className="postProfileImg" />
+                    </Link>
+                    <span className="postUserName">{ user.username }</span>
+                    <span className="postDate">{format(post.createdAt)}</span>
                 </div>
             <div className="postTopRight">
                 <MoreVert />
