@@ -8,7 +8,7 @@ export default function Login() {
     const email = useRef();
     const password = useRef();
      //グローバルコンテキスト呼び出し
-     const { user, isFetching, error, dispatch } = useContext(AuthContext);
+     const { dispatch } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();//ログイン押してもリロードされない
