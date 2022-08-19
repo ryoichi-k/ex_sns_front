@@ -1,10 +1,11 @@
 import { MoreVert } from '@mui/icons-material'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import "./Post.css"
 import axios from "axios"
 // import {format} from "timeago.js"
 // import { Link } from '@mui/material'
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../state/AuthContext";
 
 // import { Users } from "../../dummyData.js"
 
@@ -19,6 +20,9 @@ export default function Post({ post }) {
     //ユーザー情報をオブジェクト形式で管理
     const [user, setUser] = useState({});
 
+    //下記のように書くと名前をcurrentUserに変更できて重複を回避できる
+    const { user: currentUser } = useContext(AuthContext);
+
     //ユーザー情報取得のAPIを叩く
     useEffect(() => {
         const fetchUser = async () => {
@@ -29,7 +33,13 @@ export default function Post({ post }) {
     }, [post.userId, user]);
 
     //いいね数の増減
-    const handleLike = () => {
+    const handleLike = async () => {
+        try {
+            //いいねのAPIを叩く
+            await axios.put(`/posts/${post._id}/like`, { userId: currentUser._id });
+        } catch (err) {
+            console.log(err);
+        }
         setLike(isLiked ? like - 1 : like + 1)
         setIsLiked(!isLiked)
     }
