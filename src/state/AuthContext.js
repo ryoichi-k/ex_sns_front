@@ -6,7 +6,18 @@ import AuthReducer from "./AuthReducer";
 
 //初期値のユーザー状態
 const initialState = {
-    user: null,
+    // user: null,
+    user: {
+        _id : "62f98fb2bf45a1203e8d3be6",
+        username : "tanaka",
+        email : "tanaka@gmail.com",
+        password : "tanatana",
+        profilePicture : "",
+        coverPicture : "",
+        followers : [],
+        followings : [],
+        isAdmin : false,
+    },
     isFetching: false,
     error: false,
 };
