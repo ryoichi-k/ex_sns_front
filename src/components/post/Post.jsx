@@ -25,9 +25,8 @@ export default function Post({ post }) {
             const response = await axios.get(`/users?userId=${post.userId}`);
             setUser(response.data);
         };
-        console.log(user);
         fetchUser();
-    }, [post.userId]);
+    }, [post.userId, user]);
 
     //いいね数の増減
     const handleLike = () => {

@@ -24,7 +24,7 @@ export default function Profile() {
         };
         console.log(user);
         fetchUser();
-    }, []);
+    }, [user, username]);
 
 
   return (

@@ -21,14 +21,15 @@ export const AuthContextProvider = ({ children }) => {
     //stateにはユーザーが今ログインしているかどうかの状態が格納されている。
     const [state, dispatch] = useReducer(AuthReducer, initialState);
     //この中身をみんなで共有したい。すべたのコンポーネントでvalueのオブジェクトが使える
-    return (<AuthContextProvider
-      value={{
-        user: state.user,
-        isFetching: state.isFetching,
-        error: state.error,
-        dispatch,
-    }}>
-        {children}
-    </AuthContextProvider>
-    )
+    return (
+        <AuthContext.Provider
+            value={{
+                user: state.user,
+                isFetching: state.isFetching,
+                error: state.error,
+                dispatch,
+            }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };

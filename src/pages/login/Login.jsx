@@ -8,15 +8,17 @@ export default function Login() {
     const email = useRef();
     const password = useRef();
      //グローバルコンテキスト呼び出し
-     const { dispatch } = useContext(AuthContext);
+     const { user, dispatch } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();//ログイン押してもリロードされない
         loginCall({
-            email: email.currenr.value,
+            email: email.current.value,
             password: password.current.value,
         }, dispatch);
     };
+
+    console.log(user);
   return(
     <div className="login">
         <div className="loginWrapper">
