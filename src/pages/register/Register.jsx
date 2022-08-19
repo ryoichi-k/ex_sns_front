@@ -1,7 +1,42 @@
-import React from 'react'
+import React, { useRef, useContext } from 'react'
 import "./Register.css"
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
+
 
 export default function Register() {
+    const username = useRef();
+    const email = useRef();
+    const password = useRef();
+    const passwordConfirm = useRef();
+    //以前はuseHistoryだったがバージョン６から変わった。
+    const navigate = useNavigate();
+    //ボタンを押した時
+    const handleSubmit = async (e) => {
+        e.preventDefault();//ログイン押してもリロードされない
+
+        //パスワードと確認用の照合
+        if (password.current.value !== passwordConfirm.current.value) {
+            passwordConfirm.current.setCustomValidity("パスワードが違います");
+        } else {
+            try {
+                //どんなユーザーを登録するのか（inputのformに打ち込んだ文字列）
+                const user = {
+                  username: username.current.value,
+                  email: email.current.value,
+                  password: password.current.value,
+                };
+                //registerAPIを叩く
+                await axios.post("/auth/register", user);
+                //ログイン画面にリダイレクト
+                navigate("/login");
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+    };
+
   return (
     <div className="login">
     <div className="loginWrapper">
@@ -10,21 +45,21 @@ export default function Register() {
         <span className="loginDesc">みんなでアウトプット！もう寂しくない！</span>
       </div>
       <div className="loginRight">
-        <form className="loginBox">
+        <form className="loginBox"  onSubmit={(e) => handleSubmit(e)}>
           <p className="loginMsg">新規登録はこちら</p>
           <input
             type="email"
             className="loginInput"
             placeholder="Eメール"
             required
-            // ref={email}
+            ref={email}
           />
           <input
             type="text"
             className="loginInput"
             placeholder="ユーザー名"
             required
-            // ref={email}
+            ref={username}
           />
           <input
             type="password"
@@ -32,7 +67,7 @@ export default function Register() {
             required
             minLength="6"
             placeholder="パスワード"
-            // ref={password}
+            ref={password}
           />
           <input
             type="password"
@@ -40,9 +75,9 @@ export default function Register() {
             required
             minLength="6"
             placeholder="確認用パスワード"
-            // ref={password}
+            ref={passwordConfirm}
           />
-          <button className="loginButton">サインアップ</button>
+          <button className="loginButton" type="submit">サインアップ</button>
           <button className="loginRegisterButton">ログイン</button>
         </form>
       </div>
