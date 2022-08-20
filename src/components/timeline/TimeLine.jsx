@@ -5,11 +5,6 @@ import "./TimeLine.css"
 import axios from "axios"
 import { AuthContext } from "../../state/AuthContext"
 
-
-// import { Posts } from "../../dummyData.js"
-
-
-
 export default function TimeLine({ username }) {
     const [posts, setPosts] = useState([]);
 
@@ -22,7 +17,10 @@ export default function TimeLine({ username }) {
             ? await axios.get(`/posts/profile/${username}`)
             : await axios.get(`/posts/timeline/${user._id}`);//ホームの場合、全員の投稿を表示
             // postsにmongodbの投稿内容が格納
-            setPosts(response.data);
+            setPosts(
+                response.data.sort((post1, post2) => {
+                return new Date(post2.createdAt) - new Date(post1.createdAt);
+            }))
         };
         fetchPosts();
         //プロフィールの時とホームの時の両方で発火
