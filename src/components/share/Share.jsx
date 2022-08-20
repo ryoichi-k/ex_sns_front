@@ -18,10 +18,29 @@ export default function Share() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         const newPost = {
             userId: user._id,
             desc: desc.current.value,
+        };
+
+        if (file) {
+            //post通信の前に渡すdataを作る
+            const data = new FormData();//画像のデータをKVで取得
+            const fileName = Date.now() + file.name;//重複を避けるために日付をつける
+            data.append("name", fileName);
+            data.append("file", file);
+            //上記のnewPostにimgを追加
+            newPost.img = fileName;
+            // console.log(newPost);
+            try {
+              await axios.post("/upload", data);
+            } catch (err) {
+              console.log(err);
+            }
         }
+
+
         try {
             await axios.post("/posts", newPost);
             window.location.reload();
