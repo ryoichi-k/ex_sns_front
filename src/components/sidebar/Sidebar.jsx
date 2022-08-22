@@ -11,9 +11,6 @@ export default function Sidebar() {
 
     const { user, dispatch } = useContext(AuthContext);
 
-    console.log("ユーザー情報");
-    console.log(user);
-
   return (
     <div className="sidebar">
           <div className="sidebarWrapper">

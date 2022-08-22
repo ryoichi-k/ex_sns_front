@@ -46,7 +46,7 @@ export default function Rightbar({ user }) {
                     <h4 className="rightbarTitle">あなたの友達</h4>
                     <div className="rightbarFollowings">
                         <div className="rightbarFollowing">
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className="rightbarFollowingImg" />
+                            <img src={PUBLIC_FOLDER + "/person/2.jpeg"} alt="" className="rightbarFollowingImg" />
                             <span className="rightbarFollowingName">kanokano</span>
                         </div>
                         <div className="rightbarFollowing">
