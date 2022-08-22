@@ -1,11 +1,19 @@
 import { Home, Search, Notifications, MessageRounded, Bookmark, Person, Settings } from "@mui/icons-material"
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import "./Sidebar.css"
 import CloseFriend from "../closeFriend/CloseFriend"
 import { Users } from "../../dummyData.js"
 import { Link } from "react-router-dom"
+import axios from "axios"
+import { AuthContext } from "../../state/AuthContext"
 
 export default function Sidebar() {
+
+    const { user, dispatch } = useContext(AuthContext);
+
+    console.log("ユーザー情報");
+    console.log(user);
+
   return (
     <div className="sidebar">
           <div className="sidebarWrapper">
@@ -34,7 +42,7 @@ export default function Sidebar() {
                   </li>
                   <li className="sidebarListItem">
                       <Person className="sidebarIcon" />
-                      <Link to="/profile/tanaka" style={{ textDecoration: "none", color: "black" }}>
+                      <Link to={"/profile/" + user.username} style={{ textDecoration: "none", color: "black" }}>
                           <span className="sidebarListItemText">プロフィール</span>
                       </Link>
                   </li>

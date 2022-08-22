@@ -22,7 +22,6 @@ export default function Profile() {
             const response = await axios.get(`/users?username=${username}`);
             setUser(response.data);
         };
-        console.log(user);
         fetchUser();
     }, [user, username]);
 

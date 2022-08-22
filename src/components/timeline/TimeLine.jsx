@@ -10,6 +10,8 @@ export default function TimeLine({ username }) {
 
     const { user, dispatch } = useContext(AuthContext);
 
+    
+
     //propsで渡されたusernameがあれば自身の投稿のみを表示、なければ全てを表示
     useEffect(() => {
         const fetchPosts = async () => {
