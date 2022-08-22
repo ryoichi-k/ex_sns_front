@@ -49,7 +49,7 @@ export default function FormDialog() {
         <DialogTitle>プロフィールの変更</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <div className="dlgConTxt">一言自己紹介では趣味や特技を記入しましょう！誹謗中傷はNGです。</div>
+            <div className="dlgConTxt">一言自己紹介では趣味や特技を記入しましょう！（最大70文字）誹謗中傷はNGです。</div>
           </DialogContentText>
             <textarea
                 type="text"
