@@ -4,6 +4,7 @@ import Topbar from '../../components/topbar/Topbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import TimeLine from '../../components/timeline/TimeLine'
 import Rightbar from '../../components/rightbar/Rightbar'
+import ProfileDialog from '../../components/profileDialog/ProfileDialog'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
 
@@ -44,6 +45,9 @@ export default function Profile() {
                       <div className="profileInfo">
                           <h4 className="profileInfoName">{ user.username }</h4>
                           <span className="profileInfoDesc">{ user.desc }</span>
+                      </div>
+                      <div className="profileEdit">
+                          <ProfileDialog />
                       </div>
                   </div>
                   <div className="profileRightBottom">

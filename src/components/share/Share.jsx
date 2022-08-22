@@ -66,18 +66,6 @@ export default function Share() {
                           <span className="shareOptionText">写真UP</span>
                           <input type="file" id="file" accept=".png, .jpeg, .jpg" style={{ display: "none" }} onChange={(e) => setFile(e.target.files[0])}/>
                       </label>
-                      <div className="shareOption">
-                          <Gif className="shareIcon" htmlColor="hotpink" />
-                          <span className="shareOptionText">GIF</span>
-                      </div>
-                      <div className="shareOption">
-                          <Face className="shareIcon" htmlColor="green" />
-                          <span className="shareOptionText">気持ち</span>
-                      </div>
-                      <div className="shareOption">
-                          <Analytics className="shareIcon" htmlColor="red" />
-                          <span className="shareOptionText">投票</span>
-                      </div>
                   </div>
                   <button className="shareButton" type="submit">投稿</button>
               </form>

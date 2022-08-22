@@ -47,3 +47,21 @@
 .profileInfoDesc {
     font-weight: 300;
 }
+
+.profileEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.editButton {
+    border: none;
+    padding: 6px 17px;
+    background-color: #2c517c;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}

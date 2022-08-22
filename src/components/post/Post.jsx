@@ -30,7 +30,7 @@ export default function Post({ post }) {
             setUser(response.data);
         };
         fetchUser();
-    }, [post.userId, user]);
+    }, [post.userId]);
 
     //いいね数の増減
     const handleLike = async () => {
