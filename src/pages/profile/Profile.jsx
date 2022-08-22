@@ -13,7 +13,7 @@ export default function Profile() {
 
     //ユーザー情報をオブジェクト形式で管理
     const [user, setUser] = useState({});
-    //URLパラメータwp取得するhook
+    //URLパラメータを取得するhook
     const username = useParams().username;
 
     //ユーザー情報取得のAPIを叩く
@@ -38,7 +38,7 @@ export default function Profile() {
                           <img src={user.coverPicture || PUBLIC_FOLDER + "/post/3.jpeg"} alt="" className="profileCoverImg" />
                           <img src={
                               user.profilePicture
-                              ? PUBLIC_FOLDER + user.profilePicture 
+                              ? PUBLIC_FOLDER + user.profilePicture
                               : PUBLIC_FOLDER + "/person/noAvatar.png"
                           } alt="" className="profileUserImg" />
                       </div>
