@@ -73,6 +73,10 @@ export default function Rightbar({ user }) {
                             <img src={PUBLIC_FOLDER + "/person/4.jpeg"} alt="" className="rightbarFollowingImg" />
                             <span className="rightbarFollowingName">kenji</span>
                         </div>
+                        <div className="rightbarFollowing">
+                            <img src={PUBLIC_FOLDER + "/person/4.jpeg"} alt="" className="rightbarFollowingImg" />
+                            <span className="rightbarFollowingName">kenji</span>
+                        </div>
                     </div>
                 </div>
             </>
