@@ -11,18 +11,26 @@
 
 ## 技術仕様
 
-・API⇨Node.js
-・フロント⇨React
-・DB⇨mongoDB
-
 ・社内のエンジニアの反応を見つつの開発とするため、アジャイルを採用。
 
+・API⇨Node.js
+
+・フロント⇨React
+
+・UI⇨material ui
+
+・DB⇨mongoDB
+
+
+
 ## 使用するライブラリなど
+・axios
+・
 
 ## アーキテクチャ
 
 ## テスト法案
-・APIはPostman
+・API開発はPostmanで単体テストを実施
 
 ## 運用方法
 
