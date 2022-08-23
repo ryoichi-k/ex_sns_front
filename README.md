@@ -42,6 +42,10 @@
 
 ## アーキテクチャ
 
+
+
+![dr](https://user-images.githubusercontent.com/53164570/186104000-c4a5e319-25f7-415a-8781-a7ec94e95938.png)
+
 ## テスト法案
 ・API開発はPostmanで単体テストを実施
 
