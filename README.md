@@ -43,10 +43,6 @@
 ## アーキテクチャ
 
 
-
-![dr](https://user-images.githubusercontent.com/53164570/186104000-c4a5e319-25f7-415a-8781-a7ec94e95938.png)
-
-
 ![drowio drawio1](https://user-images.githubusercontent.com/53164570/186108099-3a290a6f-170f-4ef7-bddd-987b15d2667a.png)
 
 
