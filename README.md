@@ -13,11 +13,13 @@
 
 ・社内のエンジニアの反応を見つつの開発とするため、アジャイルを採用。
 
-・API⇨Node.js、フレームワーク⇨Express
+・react-router-domでSPAのアプリとする。
 
-・フロント⇨React
+・API⇨Node.js、フレームワーク⇨Express ver.4.18.1
 
-・UI⇨material ui
+・フロント⇨React ver.18
+
+・UI⇨material ui ver.5
 
 ・DB⇨mongoDB
 
