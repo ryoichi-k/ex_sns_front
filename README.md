@@ -33,7 +33,7 @@ Node.jsの選定理由
 
 ・mongooseでmongoDBとの相性もいいと考えたから。
 
-React
+Reactの選定理由
 
 ・SPAに挑戦したかったため。
 
