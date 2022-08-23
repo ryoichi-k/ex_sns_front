@@ -23,9 +23,18 @@
 
 
 
-## 使用するライブラリなど
+## 使用するパッケージ、ライブラリなど
 ・axios
+
 ・mongoose
+
+・nodemon
+
+・dotenv
+
+・helmet
+
+・multer（ファイルアップロード用）
 
 ## アーキテクチャ
 
