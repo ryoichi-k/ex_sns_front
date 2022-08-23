@@ -40,7 +40,7 @@
 
 ・multer（ファイルアップロード用）
 
-## アーキテクチャ
+## 構成
 
 
 ![drowio drawio1](https://user-images.githubusercontent.com/53164570/186108099-3a290a6f-170f-4ef7-bddd-987b15d2667a.png)
