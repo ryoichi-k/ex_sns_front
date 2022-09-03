@@ -65,11 +65,11 @@ Reactの選定理由
 ## 使用するパッケージ、ライブラリなど
 ・axios
 
-・mongoose
+・mongoose（mongodbとの接続）
 
 ・nodemon
 
-・dotenv
+・dotenv（環境変数を扱えるようにする→Express用）
 
 ・helmet
 
